@@ -34,6 +34,8 @@ echo
 cecho "$YELLOW" "Created by: Karma"
 cecho "$YELLOW" "Version: Beta 0.7"
 echo
+cecho "$RED" "!!!EXPECT BUGS!!!"
+echo
 cecho "$YELLOW" "Press Enter to continue..."
 read -p "" dummy
 clear
