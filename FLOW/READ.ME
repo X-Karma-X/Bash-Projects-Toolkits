@@ -1,0 +1,127 @@
+# FLOW.sh - Bettercap Automation Toolkit
+
+## Overview
+
+**FLOW.sh** is a Bash script toolkit designed to automate and simplify the use of [Bettercap](https://www.bettercap.org/) for network attacks, penetration testing, and network monitoring. It provides a user-friendly, menu-driven interface for configuring, running, and managing Bettercap modules and related settings.
+
+---
+
+## Features
+
+- **Interactive Menu System:**  
+  Easily navigate and control Bettercap modules and settings through a clear, color-coded menu.
+
+- **Network Interface Selection:**  
+  Lists all available network interfaces and allows you to select one for Bettercap operations.
+
+- **Module Management:**  
+  Toggle Bettercap modules (`net.recon`, `net.probe`, `arp.spoof`, `dns.spoof`, `net.sniff`, `arp.ban`) on or off, with persistent state tracking.
+
+- **Target and DNS Spoofing Configuration:**  
+  - Set ARP spoofing targets and modes (normal or ban/disconnect).
+  - Configure DNS spoofing domains, addresses, and optional hosts file.
+
+- **Apache2 Web Server Control:**  
+  Start or stop the Apache2 service directly from the menu for use with phishing or MITM attacks.
+
+- **Bettercap Command Builder:**  
+  Automatically builds the Bettercap command line based on your selected modules and options.
+
+- **Custom Bettercap Commands:**  
+  Enter and execute custom Bettercap commands directly.
+
+- **CLI Command Presets:**  
+  - Save current Bettercap command lines as presets.
+  - Load and apply saved presets, which restores all relevant settings (targets, DNS, ARP mode, modules, etc.).
+  - Delete saved presets with a paginated interface.
+
+- **Module Status Display:**  
+  Shows the current status (ON/OFF) of each Bettercap module and Apache2.
+
+- **Bettercap Log Viewer:**  
+  View the last 20 lines of the Bettercap log file from the menu.
+
+- **Cleanup and Safety:**  
+  Ensures Apache2 is stopped and temporary files are cleaned up on exit.
+
+- **Bash Version Check:**  
+  Verifies that Bash 4+ is installed before running.
+
+---
+
+## How It Works
+
+1. **Startup:**  
+   - Displays an intro banner.
+   - Checks Bash version.
+   - Sets up data directories and log files.
+
+2. **Interface Selection:**  
+   - Lists all network interfaces.
+   - Prompts user to select one (default is auto-detected).
+
+3. **Main Menu Loop:**  
+   - Displays current configuration and module status.
+   - Offers actions for probing, spoofing, module toggling, Apache2 control, preset management, and more.
+
+4. **Persistent State:**  
+   - Remembers enabled modules and settings between runs using a log file.
+
+5. **Preset Loading:**  
+   - When loading a preset, parses the command string to restore all relevant variables and module states, providing a summary of what was loaded.
+
+---
+
+## Menu Actions
+
+- **1) Network Probe & Show:**  
+  Runs Bettercap's network probe for a user-defined duration and displays results.
+
+- **2) ARP Spoof (setup options):**  
+  Configure ARP spoofing targets and mode (normal or ban).
+
+- **3) DNS Spoof (setup options):**  
+  Set domains, IP addresses, and hosts file for DNS spoofing.
+
+- **4) Apache2 Web Server Control:**  
+  Start/stop Apache2 service.
+
+- **5) Set/Change Target(s):**  
+  Enter target IP addresses for ARP spoofing.
+
+- **6) Toggle Module On/Off:**  
+  Enable or disable Bettercap modules.
+
+- **7) Clear CLI/Bettercap command:**  
+  Reset all module selections and command line.
+
+- **8) Custom Bettercap Command:**  
+  Enter and run any Bettercap command.
+
+- **9) Start Bettercap with current settings:**  
+  Launches Bettercap with the built command line.
+
+- **10) Show current Bettercap log:**  
+  Displays the last 20 lines of the Bettercap log.
+
+- **00) Save/Load Commands:**  
+  Save, load, or delete CLI command presets.
+
+- **0) Exit:**  
+  Exits the script, cleaning up as needed.
+
+---
+
+## Notes
+
+- **Requires root privileges** for some operations (Bettercap, Apache2 control).
+- **Persistent data** is stored in `~/Desktop/FLOWbcapData/`.
+- **Presets** restore all relevant settings, not just the command line.
+
+---
+
+## Disclaimer
+
+This script is for educational and authorized penetration testing purposes only.  
+Unauthorized use against networks you do not own or have explicit permission to test is illegal.
+
