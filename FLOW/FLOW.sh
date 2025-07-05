@@ -31,7 +31,7 @@ cecho "$GREEN"  "A streamlined toolkit for automating"
 cecho "$GREEN"  "Bettercap network attacks and testing."
 cecho "$GREEN"  "An easier way to use Bettercap."
 echo
-cecho "$YELLOW" "Created by: Karma"
+cecho "$YELLOW" "Created by: X-Karma-X"
 cecho "$YELLOW" "Version: Beta 0.7"
 echo
 cecho "$RED" "!!!EXPECT BUGS!!!"
